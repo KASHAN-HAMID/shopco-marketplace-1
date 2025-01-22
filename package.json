@@ -1,5 +1,5 @@
 {
-  "name": "yt",
+  "name": "ali",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -24,12 +24,13 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.5.1",
+    "jsdom": "^22.0.0",
     "lucide-react": "^0.468.0",
-    "next": "14.2.2",
+    "next": "^15.1.6",
     "next-sanity": "^9.8.39",
     "punycode": "^2.3.1",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-redux": "^9.2.0",
     "sanity": "^3.70.0",
