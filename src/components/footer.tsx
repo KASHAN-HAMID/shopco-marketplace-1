@@ -4,80 +4,86 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <main className="bg-[#F8F8F8] w-full h-full md:h-[450px] relative mt-32 max-w-screen-2xl mx-auto">
+    <main className="bg-gradient-to-r from-gray-50 to-gray-100 w-full h-full md:h-[450px] relative mt-32 max-w-screen-2xl mx-auto shadow-inner">
       {/* Offer Section */}
       <span className="absolute top-[-80px] w-full">
         <Offers />
       </span>
 
       {/* Footer Container */}
-      <div className="flex flex-col md:flex-row justify-between items-start p-5 pt-[160px] sm:pt-32 border-b md:border-none">
+      <div className="flex flex-col md:flex-row justify-between items-start px-8 py-12 border-b md:border-none">
         {/* Left Section */}
-        <div className="flex flex-col justify-center items-center w-[200px] mb-10 md:mb-0">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-800">SHOP.CO</h2>
-          <p className="text-sm mt-1 text-center text-gray-600">
-            We have clothes that suit your style and which you're proud to wear.
-            From women to men.
+        <div className="flex flex-col justify-center items-center w-[220px] mb-12 md:mb-0">
+          <h2 className="text-3xl font-extrabold text-blue-700 hover:text-blue-800 cursor-pointer transition-colors">
+            SHOP.CO
+          </h2>
+          <p className="text-sm mt-2 text-center text-gray-600">
+            Clothes that suit your style and make you proud to wear. From women to men, fashion redefined.
           </p>
           {/* Social Icons */}
-          <div className="flex items-center space-x-5 mt-4">
-            <FaInstagram className="text-xl text-gray-800 hover:text-[#E4405F] transition-colors" />
-            <FaFacebook className="text-xl text-gray-800 hover:text-[#3b5998] transition-colors" />
-            <FaGithub className="text-xl text-gray-800 hover:text-[#333333] transition-colors" />
-            <FaTwitter className="text-xl text-gray-800 hover:text-[#1DA1F2] transition-colors" />
+          <div className="flex items-center space-x-5 mt-5">
+            <FaInstagram className="text-2xl text-gray-700 hover:text-[#E4405F] transition-colors duration-300" />
+            <FaFacebook className="text-2xl text-gray-700 hover:text-[#3b5998] transition-colors duration-300" />
+            <FaGithub className="text-2xl text-gray-700 hover:text-[#333333] transition-colors duration-300" />
+            <FaTwitter className="text-2xl text-gray-700 hover:text-[#1DA1F2] transition-colors duration-300" />
           </div>
         </div>
 
         {/* Middle Section */}
-        <div className="w-full md:w-[900px] grid grid-cols-2 sm:grid-cols-4 gap-10 text-gray-600">
-          {/* Box 1 */}
-          <ul className="space-y-3">
-            <h3 className="text-sm sm:text-2xl font-semibold text-gray-800">Company</h3>
-            <li className="text-sm hover:text-[#333333] transition-colors">About Us</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Our Services</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Privacy Policy</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Terms and Conditions</li>
-          </ul>
-
-          {/* Box 2 */}
-          <ul className="space-y-3">
-            <h3 className="text-sm sm:text-2xl font-semibold text-gray-800">Quick Links</h3>
-            <li className="text-sm hover:text-[#333333] transition-colors">FAQs</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Returns & Exchanges</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Shipping Info</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Careers</li>
-          </ul>
-
-          {/* Box 3 */}
-          <ul className="space-y-3">
-            <h3 className="text-sm sm:text-2xl font-semibold text-gray-800">Customer Service</h3>
-            <li className="text-sm hover:text-[#333333] transition-colors">Contact Us</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Order Tracking</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Gift Cards</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Returns</li>
-          </ul>
-
-          {/* Box 4 */}
-          <ul className="space-y-3">
-            <h3 className="text-sm sm:text-2xl font-semibold text-gray-800">Our Policies</h3>
-            <li className="text-sm hover:text-[#333333] transition-colors">Terms of Service</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Privacy Policy</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Refund Policy</li>
-            <li className="text-sm hover:text-[#333333] transition-colors">Cookie Policy</li>
-          </ul>
+        <div className="w-full md:w-[900px] grid grid-cols-2 sm:grid-cols-4 gap-12 text-gray-600">
+          {/* Footer Box */}
+          {[
+            {
+              title: "Company",
+              links: ["About Us", "Our Services", "Privacy Policy", "Terms and Conditions"],
+            },
+            {
+              title: "Quick Links",
+              links: ["FAQs", "Returns & Exchanges", "Shipping Info", "Careers"],
+            },
+            {
+              title: "Customer Service",
+              links: ["Contact Us", "Order Tracking", "Gift Cards", "Returns"],
+            },
+            {
+              title: "Our Policies",
+              links: ["Terms of Service", "Privacy Policy", "Refund Policy", "Cookie Policy"],
+            },
+          ].map((box, idx) => (
+            <ul key={idx} className="space-y-3">
+              <h3 className="text-lg sm:text-2xl font-semibold text-gray-800">
+                {box.title}
+              </h3>
+              {box.links.map((link, linkIdx) => (
+                <li
+                  key={linkIdx}
+                  className="text-sm hover:text-blue-700 cursor-pointer transition-colors"
+                >
+                  {link}
+                </li>
+              ))}
+            </ul>
+          ))}
         </div>
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col sm:flex-row justify-between items-center p-5 mt-10 border-t border-gray-200">
-        <p className="text-sm text-gray-600">Shop.co © 2000-2023, All Rights Reserved</p>
+      <div className="flex flex-col sm:flex-row justify-between items-center p-5 mt-10 bg-gray-100 border-t border-gray-300">
+        <p className="text-sm text-gray-600">
+          Shop.co © 2000-2023, All Rights Reserved
+        </p>
         {/* Logo Images */}
         <div className="flex space-x-4">
-          <Image src="/foot1.png" className="w-[50px]" width={100} height={100} alt="Logo 1" />
-          <Image src="/foot1.png" className="w-[50px]" width={100} height={100} alt="Logo 2" />
-          <Image src="/foot1.png" className="w-[50px]" width={100} height={100} alt="Logo 3" />
-          <Image src="/foot1.png" className="w-[50px]" width={100} height={100} alt="Logo 4" />
-          <Image src="/foot1.png" className="w-[50px]" width={100} height={100} alt="Logo 5" />
+          {[1, 2, 3, 4, 5].map((num) => (
+            <Image
+              key={num}
+              src={`/foot${num}.png`}
+              className="w-[50px] hover:scale-110 transition-transform duration-200"
+              width={100}
+              height={100}
+              alt={`Logo ${num}`}
+            />
+          ))}
         </div>
       </div>
     </main>

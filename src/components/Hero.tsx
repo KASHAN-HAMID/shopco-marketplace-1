@@ -2,47 +2,47 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <main className="max-w-screen-2xl mx-auto w-full h-full md:h-[500px] flex flex-col md:flex-row justify-between items-center bg-[#F2F0F1] py-10 px-4 md:px-10">
+    <main className="max-w-screen-2xl mx-auto w-full h-full md:h-[500px] flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-blue-50 via-white to-gray-50 py-16 px-8 md:px-14">
       {/* Left Section */}
-      <div className="w-full md:w-[500px] mt-3 md:mt-10 md:ml-10 pl-3 text-center md:text-left">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight">
-          FIND CLOTHES THAT MATCH YOUR STYLE
+      <div className="w-full md:w-[500px] mt-5 md:mt-10 md:ml-10 pl-3 text-center md:text-left">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight animate-fade-in">
+          Discover Fashion, Define Style
         </h1>
-        <p className="text-sm md:text-base text-gray-600 mt-3">
-          Browse through our diverse range of meticulously crafted garments,
-          designed to bring out your individuality and cater to your sense of
-          style.
+        <p className="text-sm md:text-lg text-gray-700 mt-4">
+          Uncover a curated collection that resonates with your unique
+          personality. Step into fashion with confidence and individuality.
         </p>
-        <button className="bg-black py-3 px-10 rounded-full mt-6 text-sm text-white font-semibold transition-all duration-300 hover:bg-gray-800">
-          Shop Now
+        <button className="bg-blue-700 py-3 px-12 rounded-full mt-6 text-sm md:text-base text-white font-semibold transition-all duration-300 hover:bg-blue-900 hover:shadow-lg focus:ring-2 focus:ring-blue-500">
+          Explore Collection
         </button>
       </div>
 
       {/* Right Section (Images) */}
       <div className="relative flex justify-center md:justify-end mt-8 md:mt-0">
-        <div className="relative">
+        <div className="relative group">
+          {/* Main Profile Image */}
           <Image
-            src={"/profile.png"}
-            className="w-[300px] md:w-[400px] rounded-lg shadow-lg"
-            width={400}
-            height={400}
-            alt="profile"
+            src="/profile.png"
+            className="w-[300px] md:w-[450px] rounded-2xl shadow-xl transform transition-transform duration-500 group-hover:scale-105"
+            width={450}
+            height={450}
+            alt="Profile Image"
           />
-          {/* Star 1 */}
+          {/* Animated Star 1 */}
           <Image
-            src={"/star.png"}
-            className="w-[50px] md:w-[100px] absolute top-10 left-6 md:top-28 md:left-[-60px] z-10 animate-pulse"
-            width={100}
-            height={100}
-            alt="star"
+            src="/star.png"
+            className="w-[40px] md:w-[80px] absolute top-8 left-5 md:top-24 md:left-[-40px] z-10 animate-spin-slow"
+            width={80}
+            height={80}
+            alt="Star"
           />
-          {/* Star 2 */}
+          {/* Animated Star 2 */}
           <Image
-            src={"/star.png"}
-            className="w-[60px] md:w-[100px] absolute top-[50px] right-6 md:top-[20px] md:right-[30px] z-10 animate-pulse"
-            width={100}
-            height={100}
-            alt="star"
+            src="/star.png"
+            className="w-[50px] md:w-[80px] absolute top-[40px] right-8 md:top-[30px] md:right-[20px] z-10 animate-bounce"
+            width={80}
+            height={80}
+            alt="Star"
           />
         </div>
       </div>
